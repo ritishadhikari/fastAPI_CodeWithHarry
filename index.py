@@ -6,3 +6,9 @@ from fastapi.staticfiles import StaticFiles
 
 app=FastAPI()
 app.include_router(router=note)
+
+# Mounting Static Folder
+app.mount(path="/static",
+          app=StaticFiles(directory="static"),
+          name="static")
+
